@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PantryPal</title>
+    <link rel="stylesheet" href="frontend.css">
+
+</head>
+<style>
+    body {
+    background-image: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUSEhIVFRUXFRUVFRUVFRUVFRUVFRcXFxUVFRUYHSggGB0lHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIALcBEwMBIgACEQEDEQH/xAAZAAEBAQEBAQAAAAAAAAAAAAACAQMABAf/xAAYEAEBAQEBAAAAAAAAAAAAAAAAARECEv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwD4arnQFWR0KQEkKRZCkBMWclOSwBkWQpyUgB5WcnIsgBi+TxcBl5deWuJgM/KY1xLyDK8peWuJgMvKXlpY6wGWJY0sTAZYljTBsALEw8HAHELEwEQqgI5zgc5zgUpHSFIDpCkWQpAdOSkLmFICSLOSkPyATkpyUiyAGFhTlZADFkPFwGdi2H5dgMsc0xLAZWOxpYmAysTGliWAysGxrYlgMcSxpg0GeDjSwbADEOwQHEwq4GbiqAjnOBrIci8w5yCcw+Y6RpIAyNJHcw5ATCxcXASRZCkKQBxfJyL5AMXycjsAMd5PFnIMryl5a3lLAY3lLGtg2AysGxtiWAxsDGtg0GeBY0sGwGdg2NKNgANh1MALEKiCWCVSwBcrgernlpzHcwsBZCkdIUgLIuLOSkBJCkdIUgOwuYsiyA6RcWRYCYuFOVkAcTGkiYAYN5a1LAZWDeWtg2AywbGtgYDLArawOoDLqBWtgdQGdgWNbAoBYNMaAVCogKUqlAcc7HA9/MOJC5BYUiQ5AdyWOiyAshR0LAXCkSQoC4sixcB2LIuLgI7CxcBneUxpUoM+oNjSwcBlYHUbWB1AZdRn1G3TOgyodNemdBnYNaUKDOwemnQUAo07BoCioAuXHA98LlIUAuYUSLyBQ4MKQFhwcLkChjCBZDgwoClEhQEWKoDUpVACj0dGgz6Gw6FAOmfTSwKDLqM+o1oWAzsCtKFBn0J9BQBOi6SgCLUBNc7HA90PlnDlA4UGFAKHGbSAsPmjzSlA5SgSnKBQ5AhSgeKOrAKV1GUoCOWiCVFtEAo2F1BtAOmdrToOgZ9M606gWAz6Do6HQDQPoKA0OodGgNorUBzk1wPbCjPmnKDSFKzhgenrKHoNIUrPT5oHClZykDSUpQldKDWFKz1ZQaO0JV0CUZU0Halo3p2glouodUHdUOqQdAHQUrQoDWfR0MAaFOh0A0OiHoBqOdQRyWuB6pTjKU9BrKUrLk5QaSlKzhwDlKdM5S0GkpMpSBrqyhzVlBqsrKUpQaa6dBrpQPXaGu0F1I7RtB1o2u0aCalq0LQTqs6WjaAUaVHqgFCkFBKHRUKDhUbQRznA3lOVlKXNBrzTlZSlKDXSlZSnzQaSrKzlKUGkpay0tBrzVlZasoNfSys5V0GmrrPXSg0116Z660Gko2hK60CG0ddaC6NdoUHUavVG0EtZ0rQAaOu6o2gNG1bRoOo2rQtBzkcDWUpWelKDWUpWUpSg1050xlKdA1lKVlKs6BrKustKUGsq6ylKUGmrrOVfQNddaz12g0116Zyu0D12hrtAtS0dTqgdo6mjegXqj6d6Dqg7qha7qhoOtDqraFoJUdaloJaK2iCuRwFCjnAspSo4C05XOBdX05wFKuo4C9FOnOBZV9OcCyr6RwO12ucCyprnA7Utc4EvSWucAWjenOAbRtRwDaNrnAKVzgRHOBznOB//2Q==");
+    background-size: cover;
+    background-attachment: fixed;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #B22222;
+    padding: 15px 20px;
+    color:white ;
+    z-index: 1000; /* Keeps it above other content */
+}
+
+.logo {
+    font-size: 36px;
+    font-weight: bold;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+.nav-links li {
+    margin: 0 15px;
+}
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.nav-links a:hover {
+    color: black;
+}
+/* Add margin to body so content doesn't go under navbar */
+body {
+    padding-top: 60px;
+}
+.home {
+    position: relative; 
+    text-align: center;
+    max-width: max-content;
+}
+
+.newyork {
+    position: absolute; 
+    top: 18%; left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: wheat;
+    font-size: 30px;
+    font-weight: bolder;
+    text-shadow: -1px -1px 0px black, 1px -1px 0px black, -1px 1px 0px black, 1px 1px 0px black;
+    animation-name: slideTop;
+    animation-duration: 2s;
+}
+
+.stats-container {
+    text-align: center;
+    background: wheat;
+    padding: 100px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    width: 60%;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.stat {
+    background: linear-gradient(to right, #B22222, #ff7e5f);
+    color: white;
+    padding: 50px;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+.stat:hover {
+    transform: scale(1.05);
+}
+h3 {
+    font-size: 2em;
+    margin: 0;
+}
+p {
+    font-size: 1.2em;
+}
+
+.donationform {
+    width: 50%;
+    margin-top: 50px;
+    margin: auto;
+    margin-bottom: 50px;
+    background: wheat;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+.donationform h2 {
+    color: #B22222;
+}
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+button {
+    margin-top: 15px;
+    background: linear-gradient(to right,#B22222, #ff7e5f);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    background: linear-gradient(to right,#B22222, #ff7e5f);
+}
+
+.contact {
+        position: relative; 
+        text-align: center;
+        width: 100%;
+        height: auto; /* Maintains aspect ratio */
+        display: block;
+}
+.contact-container {
+    position: absolute;
+    opacity: 0.7;
+    transition: 0.5s ease-in-out;
+    transform: translate(-50%, -50%); 
+    top: 50%; left: 50%; 
+    width: 50%;
+    margin: auto;
+    background: wheat;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.contact-container:hover {
+    opacity: 1;
+}
+h2 {
+    color: #B22222;
+}
+.contact-details p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+.contact-details a {
+    color: #B22222;
+    text-decoration: none;
+    font-weight: bold;
+}
+.social-links {
+    margin-top: 15px;
+}
+.social-icon {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 12px;
+    background: linear-gradient(to right,#B22222, #ff7e5f);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.social-icon:hover {
+    background: linear-gradient(to right, #ff6b5f, #fe9e7b);
+}
+
+.simple-footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.movnavdad{
+    height:70px;
+    position: relative;
+    background-color:#B22222;/*parent will collapse if child has position absolute*/
+    color:white;
+    white-space: nowrap;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    margin-top: 0%;
+}
+.movnavdad .movnav{
+    overflow:hidden;/*so that text doesnt overflow outside the div element*/
+    position : absolute;/*so that we can use left keyword*/
+    padding : 20px;
+    animation: moveText 15s linear infinite;
+}
+.movnav:hover{
+    text-decoration-color: white;
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+@keyframes moveText {
+    0% {
+      left: 100%; /* Start from outside the right side of the div */
+    }
+    100% {
+      left: -100%; /* Move all the way to outside the left side of the div */
+    }
+}
+
+@keyframes slideTop {
+    from{transform:translateY(-900%)}    
+
+    
+}
+
+.donationform {
+    width: 50%;
+    margin-top: 50px;
+    margin: auto;
+    margin-bottom: 50px;
+    background: wheat;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+.donationform h2 {
+    color: #ff7e5f;
+}
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+button {
+    margin-top: 15px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    background: linear-gradient(to right, #ff6b5f, #fe9e7b);
+}
+
+</style>
+<body>
+    <!--NAVBAR-->
+    <nav class="navbar">
+        <div class="logo">PantryPal</div>
+        <ul class="nav-links">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#stats-container">STATISTICS</a></li>
+            <li><a href="#prediction">AI PREDICTION</a></li>
+            <li><a href="#donationform">DONATION FORM</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <div class="home" id="home">
+        <img  src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmVzdGF1cmFudHxlbnwwfHwwfHx8MA%3D%3D" width="100%"></img>
+    </div>
+
+    <div class="movnavdad">
+        <div class="movnav">
+            Food wastage in restaurants is a major global issue, contributing to both economic losses and environmental damage. Every day, tons of perfectly edible food end up in landfills due to overproduction, portion sizes that are too large, and inefficient inventory management. Restaurants often discard surplus ingredients, unsold meals, and leftovers, leading to unnecessary waste. This not only increases operational costs but also contributes to greenhouse gas emissions as food decomposes and releases methane. By adopting better planning, portion control, and food donation programs, restaurants can significantly reduce waste, save money, and help fight hunger. Implementing sustainable practices, such as composting and utilizing food scraps creatively, can also make a huge difference in reducing the environmental impact of food wastage.
+        </div>
+    </div>
+
+    <div class="stats-container" id="stats-container">
+        <h1>AI USAGE IMPACT</h1>
+        <div class="stats">
+            <div class="stat">
+                <h3 id="mealsDonated">500,000+</h3>
+                <p>Meals Donated</p>
+            </div>
+            <div class="stat">
+                <h3 id="peopleHelped">100,000+</h3>
+                <p>Money saved</p>
+            </div>
+            <div class="stat">
+                <h3 id="volunteers">200+</h3>
+                <p>NGOs Helped</p>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="donationform" id="prediction">
+        <h2>AI PREDICTION</h2>
+        <div class="upload-container">
+            <h1>Upload Sales and Menu CSV Files</h1> <!-- Title inside form card -->
+    
+            <form action="/" method="POST" enctype="multipart/form-data">
+                <input type="file" name="sales" id="sales" class="file-input" required>
+                <label for="sales" class="file-label">Select Sales Data CSV</label>
+    
+                <input type="file" name="menu" id="menu" class="file-input" required>
+                <label for="menu" class="file-label">Select Menu Data CSV</label>
+    
+                <button type="submit" class="submit-btn">Upload and Predict</button>
+            </form>
+        </div>
+    
+    </div>
+
+    <div class="donationform" id="donationform">
+        <h2>🍽️ Food Donation Form</h2>
+        <form id="donationForm">
+            <label for="name">Your Name:</label>
+            <input class="input" type="text" id="name" name="name" required>
+    
+            <label for="food-type">Type of Food:</label>
+            <select class="input" id="food-type" name="food-type" required>
+                <option value="">Select Food Type</option>
+                <option value="grains">Grains & Pulses</option>
+                <option value="vegetables">Vegetables</option>
+                <option value="fruits">Fruits</option>
+                <option value="cooked">Cooked Food</option>
+                <option value="others">Others</option>
+            </select>
+    
+            <label for="quantity">Quantity (kg/liters):</label>
+            <input class="input" type="number" id="quantity" name="quantity" min="1" required>
+    
+            <label for="pickup">Pickup Address:</label>
+            <textarea class="input" id="pickup" name="pickup" rows="3" required></textarea>
+    
+            <button type="submit" id="submit">Donate Now</button>
+        </form>
+    </div>
+
+    <div class="contact" id="contact">
+        <img  src="https://media.istockphoto.com/id/1446478827/photo/a-chef-is-cooking-in-his-restaurants-kitchen.jpg?s=612x612&w=0&k=20&c=jwKJmGErrLe2XsTWNYEEyiNicudYVA4j8jvnTiJdp58=" width="100%" display="block"></img>
+        <div class="contact-container" id="contact">
+            
+            <h2>📞 Contact Us</h2>
+            <p>If you have any questions or want to donate, feel free to reach out!</p>
+        
+            <div class="contact-details">
+                <p><strong>📍 Address:</strong> 123 Food Drive Street, Karnataka, India</p>
+                <p><strong>📧 Email:</strong> <a href="mailto:donate@fooddonation.org">donate@fooddonation.org</a></p>
+                <p><strong>📞 Phone:</strong> <a href="tel:+919876543210">+91 98765 43210</a></p>
+            </div>
+        
+            <div class="social-links">
+                <a href="#" class="social-icon"> Facebook</a>
+                <a href="#" class="social-icon"> Instagram</a>
+                <a href="#" class="social-icon"> Twitter</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+            
+        document.getElementById("submit").addEventListener("click", async function(event) {
+event.preventDefault(); // Prevent the page from refreshing
+
+const donationData = {
+    name: document.getElementById("name").value,
+    foodType: document.getElementById("food-type").value,
+    quantity: document.getElementById("quantity").value,
+    pickupAddress: document.getElementById("pickup").textContent
+};
+
+try {
+    // Send donation data
+    const response = await fetch('http://localhost:5000/api/donations', {  // Remove `/donate`
+method: 'POST',
+headers: { 'Content-Type': 'application/json' },
+body: JSON.stringify(donationData)
+});
+
+
+    if (response.ok) {
+        alert("Donation Submitted Successfully!");
+        document.getElementById("donationForm").reset();
+        
+        // Notify NGOs after successful donation
+    } else {
+        alert("Error submitting donation.");
+    }
+} catch (error) {
+    console.error("Error:", error);
+    alert("Something went wrong!");
+}
+});
+
+// Function to notify NGOs
+async function notifyNGOs() {
+try {
+    const response = await fetch('http://localhost:5000/api/donations/notify', {
+        method: 'POST'
+    });
+
+    if (response.ok) {
+        console.log("NGOs notified successfully!");
+    } else {
+        console.error("Failed to notify NGOs");
+    }
+} catch (error) {
+    console.error("Error notifying NGOs:", error);
+}
+}
+
+
+  </script>
+
+    <footer class="simple-footer">
+        <p>"Be the reason someone has a meal today."<br><br>© 2025 Food Donation </p>
+    </footer>
+    
+
+</body>
+</html>
+

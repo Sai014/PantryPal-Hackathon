@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    <style>
+        
+        
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #B22222;
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tr:hover {
+    background-color: #e9ecef;
+}
+
+td {
+    border-bottom: 1px solid #dee2e6;
+}
+
+a {
+    color: #dee2e6;
+    background-color: #B22222;
+    height: 30px;
+    width: 100%;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Raw Material Requirements</h1>
+    {% for table in tables %}
+        {{ table|safe }}
+    {% endfor %}
+    <a href="/">Upload More CSV Files</a>
+</body>
+</html>
