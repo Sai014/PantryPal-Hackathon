@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AayushDhaan</title>
+    <link rel="stylesheet" href="frontend.css">
+
+</head>
+<body>
+    <!--NAVBAR-->
+    <nav class="navbar">
+        <div class="logo">AayushDhaan</div>
+        <ul class="nav-links">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#stats-container">STATISTICS</a></li>
+            <li><a href="#donation-form">DONATION</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <div class="home" id="home">
+        <img  src="https://www.fredvictor.org/wp-content/uploads/2020/03/food-donations-scaled.jpg" width="100%"></img>
+    </div>
+
+    <div class="movnavdad">
+        <div class="movnav">
+            Food scarcity remains a critical challenge in India, where over 195 million people suffer from undernutrition, despite the country being one of the largest food producers in the world. Shockingly, nearly 40% of food goes to waste, while millions struggle for a single meal. This crisis disproportionately affects children, with over 33% of kids under five suffering from malnutrition. However, food donation is a powerful solution that can bridge this gap. By donating surplus food, supporting community kitchens, and contributing to food banks, individuals and organizations can help save lives, reduce waste, and bring hope to countless families. Every meal shared is a step toward a hunger-free India, proving that a small act of kindness can make a monumental difference. Together, we can fight food scarcity and ensure that no one sleeps hungry.
+        </div>
+    </div>
+
+    <div class="stats-container" id="stats-container">
+        <h1>Food Donation Impact</h1>
+        <div class="stats">
+            <div class="stat">
+                <h3 id="mealsDonated">500,000+</h3>
+                <p>Meals Donated</p>
+            </div>
+            <div class="stat">
+                <h3 id="peopleHelped">250,000+</h3>
+                <p>People Helped</p>
+            </div>
+            <div class="stat">
+                <h3 id="volunteers">10,000+</h3>
+                <p>Active Volunteers</p>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="donation-form" id="donation-form">
+        <h2>🍽️ Food Donation Form</h2>
+        <form action="submit_form.php" method="POST">
+            <label for="name">Your Name:</label>
+            <input class="input" type="text" id="name" name="name" required>
+    
+            <label for="food-type">Type of Food:</label>
+            <select class="input" id="food-type" name="food-type" required>
+                <option value="">Select Food Type</option>
+                <option value="grains">Grains & Pulses</option>
+                <option value="vegetables">Vegetables</option>
+                <option value="fruits">Fruits</option>
+                <option value="cooked">Cooked Food</option>
+                <option value="others">Others</option>
+            </select>
+    
+            <label for="quantity">Quantity (kg/liters):</label>
+            <input class="input" type="number" id="quantity" name="quantity" min="1" required>
+    
+            <label for="pickup">Pickup Address:</label>
+            <textarea class="input" id="pickup" name="pickup" rows="3" required></textarea>
+    
+            <button type="submit">Donate Now</button>
+        </form>
+    </div>
+
+    <div class="contact" id="contact">
+        <img  src="https://www.newsindiatimes.com/wp-content/uploads/2018/12/85ec5dd6aee288926488ac5f70e5fc87.jpg" width="100%" display="block"></img>
+        <div class="contact-container" id="contact">
+            
+            <h2>📞 Contact Us</h2>
+            <p>If you have any questions or want to donate, feel free to reach out!</p>
+        
+            <div class="contact-details">
+                <p><strong>📍 Address:</strong> 123 Food Drive Street, Karnataka, India</p>
+                <p><strong>📧 Email:</strong> <a href="mailto:donate@fooddonation.org">donate@fooddonation.org</a></p>
+                <p><strong>📞 Phone:</strong> <a href="tel:+919876543210">+91 98765 43210</a></p>
+            </div>
+        
+            <div class="social-links">
+                <a href="#" class="social-icon"> Facebook</a>
+                <a href="#" class="social-icon"> Instagram</a>
+                <a href="#" class="social-icon"> Twitter</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="simple-footer">
+        <p>"Be the reason someone has a meal today."<br><br>© 2025 Food Donation </p>
+    </footer>
+    
+</body>
+</html>
